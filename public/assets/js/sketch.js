@@ -60,11 +60,24 @@ let interval = setInterval(function() {
 
 }, 1000);
 
-let arah;
+// let arah;
 
-setInterval(playerMove, 100)
+// setInterval(playerMove, 100)
 
-function playerMove() {
+function playerMove(arah) {
+
+  let i = arah == 1 ? 1 : arah == 3 ? -1 : 0;
+  let j = arah == 0 ? -1 : arah == 2 ? 1 : 0;
+
+  if (maze[player1.i + i][player1.j] != null && maze[player1.i + i][player1.j] != 1) {
+    player1.i += i
+  }
+  if (maze[player1.i][player1.j + j] != null && maze[player1.i][player1.j + j] != 1) {
+    player1.j += j
+  }
+  
+  player1.eatDiamond(diamonds)
+
   var data = {
     roomId: localStorage.getItem('roomId'),
     playerId: localStorage.getItem('playerId'),
@@ -340,8 +353,8 @@ function setup() {
       for (let player of players) {
         var id = player.playerId;
         if (id === localStorage.getItem('playerId')) {
-          player1.i = player.i
-          player1.j = player.j
+          // player1.i = player.i
+          // player1.j = player.j
           player1.score = player.score;
         }
         if (counter < 10) {
@@ -461,23 +474,21 @@ function windowResized() {
 }
 
 function draw() {
-  if (keyIsPressed) {
-    if (key == 'w') {
-      arah = ATAS;
-
-    }else if (key == 's') {
-      arah = BAWAH;
-
-    }else if (key == 'a') {
-      arah = KIRI;
-
-    }else if (key == 'd') {
-      arah = KANAN;
-
-    }
-  }else{
-    arah = null;
-  }
+  // if (keyIsPressed) {
+  //   if (key == 'w') {
+  //     arah = ATAS;
+  //   }else if (key == 's') {
+  //     arah = BAWAH;
+  //
+  //   }else if (key == 'a') {
+  //     arah = KIRI;
+  //
+  //   }else if (key == 'd') {
+  //     arah = KANAN;
+  //   }
+  // }else{
+  //   arah = null;
+  // }
   if (grid) {
     background(0, 123, 255, 100);
     translateXYZ.x = -w * player1.i - (w / 2)
@@ -497,32 +508,32 @@ function draw() {
   }
 }
 //
-// function keyPressed() {
-//   switch (key) {
-//     case 'W':
-//       // playerMove(ATAS);
-//       arah = ATAS;
-//       break;
-//     case 'S':
-//       // playerMove(BAWAH);
-//       arah = BAWAH;
-//       break;
-//     case 'A':
-//       // playerMove(KIRI);
-//       arah = KIRI;
-//       break;
-//     case 'D':
-//       // playerMove(KANAN);
-//       arah = KANAN;
-//       break;
-//     case 'Q':
-//       zoomCamera();
-//       break;
-//     case 'E':
-//       pathToggle();
-//       break;
-//   }
-// // }
+function keyPressed() {
+  switch (key) {
+    case 'W':
+      // arah = ATAS;
+      playerMove(ATAS);
+      break;
+    case 'S':
+      // arah = BAWAH;
+      playerMove(BAWAH);
+      break;
+    case 'A':
+      // arah = KIRI;
+      playerMove(KIRI);
+      break;
+    case 'D':
+      // arah = KANAN;
+      playerMove(KANAN);
+      break;
+    case 'Q':
+      zoomCamera();
+      break;
+    case 'E':
+      pathToggle();
+      break;
+  }
+}
 // function keyTyped(){
 //   // console.log(key)
 //   switch (key) {

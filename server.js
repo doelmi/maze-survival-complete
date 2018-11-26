@@ -19,7 +19,7 @@ var io = require('socket.io')(server, {
   path: '/socket'
 });
 
-server.listen(process.env.PORT || 80, function() {
+server.listen(process.env.PORT || 3000, function() {
   var host = server.address().address;
   var port = server.address().port;
   console.log('Maze Survival listening at http://' + host + ':' + port);
@@ -277,7 +277,7 @@ play.on('connection',
     socket.on('update',
       function(data) {
         //parameter yang dibutuhkan : roomId, playerId, arah
-        console.log(data.arah)
+        // console.log(data.arah)
         let i = data.arah == 1 ? 1 : data.arah == 3 ? -1 : 0;
         let j = data.arah == 0 ? -1 : data.arah == 2 ? 1 : 0;
         // console.log(i, j)
@@ -299,7 +299,7 @@ play.on('connection',
               room.diamond = diamond.addDiamond(deleteDiamond.diamond, room.maze)
             }
           }
-          play.in(data.roomId).emit('set', {
+          play.to(data.roomId).emit('set', {
             players: room.players,
             diamonds: room.diamond
           })

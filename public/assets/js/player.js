@@ -58,16 +58,16 @@ function Player(i, j, r, g, b) {
     //        rect(this.i * w, this.j * h, w, h);
   }
 
-  // this.eatDiamond = function(diamond) {
-  //   var i = this.i;
-  //   var j = this.j;
-  //
-  //   var result = diamond.findIndex(x => x.i === i && x.j === j);
-  //
-  //   if (result != -1) {
-  //     diamond.splice(result, 1);
-  //   }
-  //   return result;
-  //   //   console.log(this.score);
-  // }
+  this.eatDiamond = function(diamond) {
+    var i = this.i;
+    var j = this.j;
+
+    var result = diamond.findIndex(x => x.i === i && x.j === j);
+
+    if (result != -1) {
+      diamond.splice(result, 1);
+    }
+    return result;
+    //   console.log(this.score);
+  }
 }
