@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <!-- Link to our stylesheet! -->
+  <title>Maze Survival by Doelmi</title>
+  <link rel="icon" href="assets/img/logo4.png" type="image/png" sizes="32x32">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta content='width=device-width, user-scalable=0' name='viewport' />
+</head>
+
+<body class="disableSelection">
+  <div id="pop-up-info">
+    Kamu punya waktu tambahan 2 menit.
+  </div>
+
+  <div id="mazeSurvival"></div>
+
+  <div id="scoreBox">
+    <div id="score">
+      <h3>Skor</h3>
+      <h1 id="scorer">0</h1>
+    </div>
+  </div>
+
+  <div id="timeBox">
+    <div id="time">
+      <h3>Waktu</h3>
+      <h1 id="timer">00:00</h1>
+    </div>
+  </div>
+
+  <div id="leftControl"></div>
+
+  <div id="rightControl"></div>
+
+  <div id="upControl"></div>
+
+  <div id="downControl"></div>
+
+  <div id="zoomControl"></div>
+
+  <div id="pathControl"></div>
+
+  <div id="scoreBoard">
+    <h3>Papan Skor</h3>
+    <div id="papanSkor"></div>
+  </div>
+
+  <div id="finalScore">
+    <h2 id="infoMenang">Kamu</h2>
+    <div id="inFinish" class="score">
+      <h3>Pemain mencapai finish</h3>
+      <div id="pemainFinish" class="daftar-pemain">
+        <!-- <ol>
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+          <li>D</li>
+          <li>E</li>
+        </ol> -->
+      </div>
+    </div>
+
+    <div id="outFinish" class="score">
+      <h3>Pemain tidak mencapai finish</h3>
+      <div id="pemainTidakFinish" class="daftar-pemain">
+        <!-- <ol>
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+          <li>D</li>
+          <li>E</li>
+        </ol> -->
+      </div>
+    </div>
+
+    <button type="button" name="button" id="kembali-lobi">Kembali ke Lobi</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+  <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+  <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script>
+  <script language="javascript" type="text/javascript" src="assets/js/player.js"></script>
+  <script language="javascript" type="text/javascript" src="assets/js/spot.js"></script>
+  <script language="javascript" type="text/javascript" src="assets/js/diamond.js"></script>
+  <script language="javascript" type="text/javascript" src="assets/js/sketch.js"></script>
+  <!-- <script language="javascript" type="text/javascript" src="assets/js/play.min.js"></script> -->
+
+  <script type="text/javascript">
+    $('#kembali-lobi').click(function() {
+      localStorage.removeItem('roomId');
+      localStorage.removeItem('roomName');
+      localStorage.removeItem('roomPassword');
+
+      location.href = host + "/lobi";
+    });
+  </script>
+</body>
+
+</html>

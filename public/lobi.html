@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Maze Survival by Doelmi | Beranda</title>
+  <meta content='width=device-width, user-scalable=0' name='viewport' />
+  <link rel="icon" href="assets/img/logo4.png" type="image/png" sizes="32x32">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+
+<body style="background-color: rgba(0,0,0,0.04);">
+  <div class="container">
+    <div class="row mt-3">
+
+      <div class="col-3">
+        <div class="card bg-light border-primary">
+          <!-- <div class="card-header text-primary">Menu</div> -->
+          <div class="card-body">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Beranda</a>
+              <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profil</a>
+              <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Lobi</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-9">
+        <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <div class="card bg-light border-primary">
+              <div class="card-header text-light bg-primary">Beranda</div>
+              <div class="card-body">
+                <div class="beranda">
+                  <center>
+                    <h2>Maze Survival</h2>
+                    <img src="assets/img/logo4.png" alt="logo" width="200">
+                  </center>
+                </div>
+                <div class="how-to-play">
+                  <p><b>Bagaimana cara bermain?</b></p>
+                  <ol>
+                    <li>
+                      Sebelum memasuki area permainan, pemain akan terlebih dahulu memasuki sebuah lobby untuk menunggu pemain lainnya.
+                    </li>
+                    <li>
+                      Dalam masa penelitian jumlah pemain dalam satu lobby sebanyak 10 pemain.
+                    </li>
+                    <li>
+                      Pemilik/pembuat lobby dapat memulai permainan tanpa harus menunggu pemain penuh.
+                    </li>
+                    <li>
+                      Dalam area permainan, pemain akan dihadapkan dengan sebuah labirin.
+                    </li>
+                    <li>
+                      Pemain akan ditempatkan secara acak di dalam labirin.
+                    </li>
+                    <li>
+                      Di dalam labirin terdapat makanan-makanan yang dapat menambah skor.
+                    </li>
+                    <li>
+                      Pemain diharuskan memakan makanan tersebut dengan menggerakkan dirinya menabrak makanan.
+                    </li>
+                    <li>
+                      Pemain menggerakkan dirinya dengan menekan tombol WASD. W untuk ke atas, A untuk ke kiri, S untuk ke bawah dan D untuk ke kanan.
+                    </li>
+                    <li>
+                      Proses permainan (pencarian makan) dilaksanakan selama waktu masih ada.
+                    </li>
+                    <li>
+                      Setelah waktu habis, pemain diberikan waktu tambahan selama 30 detik untuk mencari jalan keluar.
+                    </li>
+                    <li>
+                      Jalan keluar telah ditetapkan di awal permainan.
+                    </li>
+                    <li>
+                      Pemain yang tidak mencapai jalan keluar maka dinyatakan kalah.
+                    </li>
+                    <li>
+                      Pemenang akan ditentukan dengan pemilik skor terbanyak dan telah mencapai jalan keluar.
+                    </li>
+                    <li>
+                      Permainan berakhir lalu menampilkan skor semua pemain.
+                    </li>
+                  </ol>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+            <div class="card bg-light border-primary">
+              <div class="card-header text-light bg-primary">Profil</div>
+              <div class="card-body">
+                <div class="my-id">
+                  my id
+                </div>
+                <div class="my-name">
+                  my name
+                </div>
+                <div class="my-full-name">
+                  my full name
+                </div>
+                <div class="logout">
+                  <button type="button" name="logout" id="logout" class="btn btn-danger">Logout</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+            <div class="card bg-light border-primary">
+              <div class="card-header text-light bg-primary">Lobi</div>
+              <div class="card-body">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Buat Lobi</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Ikut Lobi</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Lobi sekarang</a>
+                  </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <form class="form-inline">
+                      <div class="form-group mb-2">
+                        <label for="namaLobiBuat" class="sr-only">Nama Lobi (Buat)</label>
+                        <input type="text" class="form-control" id="namaLobiBuat" placeholder="Nama Lobi (Buat)">
+                      </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                          <label for="passwordLobiBuat" class="sr-only">Password Lobi (Buat)</label>
+                          <input type="password" class="form-control" id="passwordLobiBuat" placeholder="Password Lobi (Buat)">
+                      </div>
+                          <div class="form-group mb-2">
+                            <label for="tipeMazeBuat" class="sr-only">Tipe Maze (Buat)</label>
+                            <select class="form-control" id="tipeMazeBuat" name="tipeMaze">
+                            <option value="ALDOUS">Aldous-Broder (Normal, Sulit)</option>
+                            <option value="BINARY">Binary Tree (Cepat, Mudah)</option>
+                            <option value="HUNT">Hunt and Kill (Lama, Sedang)</option>
+                            <option value="GROWING">Growing Tree (Normal, Sedang)</option>
+                            <option value="WILSONS">Wilson's (Lama, Sulit)</option>
+                          </select>
+                          </div>
+                          <button type="button" class="btn btn-primary mx-sm-3 mb-2" id="buatLobi">Buat</button>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <form class="form-inline">
+                      <div class="form-group mb-2">
+                        <label for="idLobiIkut" class="sr-only">Id Lobi (Ikut)</label>
+                        <input type="text" class="form-control" id="idLobiIkut" placeholder="Id Lobi (Ikut)">
+                      </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                          <label for="passwordLobiIkut" class="sr-only">Password Lobi (Ikut)</label>
+                          <input type="password" class="form-control" id="passwordLobiIkut" placeholder="Password Lobi (Ikut)">
+                      </div>
+                          <button type="button" class="btn btn-primary mb-2" id="ikutLobi">Ikut</button>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <form>
+                      <div class="form-group row">
+                        <label for="idLobiSekarang" class="col-sm-2 col-form-label">Id Lobi</label>
+                        <div class="col-sm-10">
+                          <input type="text" readonly class="form-control-plaintext" id="idLobiSekarang" placeholder="Id Lobi Sekarang">
+                        </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="namaLobiSekarang" class="col-sm-2 col-form-label">Nama Lobi</label>
+                          <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="namaLobiSekarang" placeholder="Nama Lobi Sekarang">
+                        </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="passwordSekarang" class="col-sm-2 col-form-label">Password Lobi</label>
+                            <div class="col-sm-10">
+                              <input type="password" readonly class="form-control-plaintext" id="passwordSekarang" placeholder="**********">
+                        </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="listPemain" class="col-sm-2 col-form-label">Daftar Pemain</label>
+                              <div class="col-sm-6">
+                                <ul class="list-group" id="listPemain">
+                                </ul>
+                              </div>
+                              <div class="col-sm-4">
+                                <center>
+                                  <button type="button" class="btn btn-outline-danger btn-sm" id="tinggalkanPermainan" name="tinggalkanPermainan">Tinggalkan Permainan</button>
+                                </center>
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <div class="col-sm-12">
+                                <input type="button" class="btn btn-outline-primary btn-lg btn-block" id="mulaiPermainan" value="Mulai Permainan">
+                        </div>
+                              </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="assets/js/lobi.js"></script>
+</body>
+
+</html>
