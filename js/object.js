@@ -24,9 +24,9 @@ module.exports = {
 
     this.hostId = null;
 
-    this.time = 480; //waktu sisa
+    this.time = 10; //waktu sisa
 
-    this.extraTime = 120; //waktu tambahan
+    this.extraTime = 10; //waktu tambahan
 
     this.destroyTime = 30; //waktu untuk penghancuran lobby
 

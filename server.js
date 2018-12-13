@@ -45,7 +45,6 @@ let wilsons = new wilsonsClass(n)
 var rooms = {};
 
 let sendPostMatch = function(matchId, winnerId, mazeType, players) {
-
   let playersInput = [];
 
   for (let key in players) {
@@ -80,6 +79,7 @@ let sendPostMatch = function(matchId, winnerId, mazeType, players) {
     // let responseString = "";
     res.on("data", function(data) {
       // responseString += data;
+      console.log(`${data}`)
     });
     res.on("end", function() {
       // console.log(responseString);
@@ -473,6 +473,8 @@ app.get('/get_profil', function(req, res) {
 });
 
 app.post('/match', function(req, res) {
+  let WM = getMillis()
+
   let auth = 'adminmazesurvival'
   // let body = JSON.parse(req.body)
   let matchId = req.body.matchId;
@@ -502,9 +504,13 @@ app.post('/match', function(req, res) {
     con.query(sql, input, function(err, result) {
       if (err) throw err;
 
+      let WA = getMillis()
+      let WG = WA - WM
+
       let callback = {
         'kode': 200,
-        'pesan': "data berhasil dimasukkan."
+        'pesan': "data berhasil dimasukkan.",
+        'executionTime' : WG
       };
 
       returnValue(callback, 200);
